@@ -18,7 +18,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "astrodark",
+  colorscheme = "onedark",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -68,6 +68,12 @@ return {
   -- This function is run last and is a good place to configuring
   -- augroups/autocommands and custom filetypes also this just pure lua so
   -- anything that doesn't fit in the normal config locations above can go here
+  vim.cmd([[
+  augroup AutoBlack
+    autocmd!
+    autocmd BufWritePre *.py :Black
+  augroup END
+          ]]),
   polish = function()
     -- Set up custom filetypes
     -- vim.filetype.add {
