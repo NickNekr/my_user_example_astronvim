@@ -23,6 +23,34 @@ return {
       })
     end,
   },
+    -- "jay-babu/mason-null-ls.nvim",
+    -- overrides `require("mason-null-ls").setup(...)`
+    {'psf/black',
+    event = 'VeryLazy'
+    },
+    {
+      'mg979/vim-visual-multi',
+    event = 'VeryLazy'
+    },
+    {
+    "danymat/neogen",
+    config = function()
+        require('neogen').setup {}
+    end,
+    requires = "nvim-treesitter/nvim-treesitter",
+    event = 'VeryLazy',
+    -- Uncomment next line if you want to follow only stable versions
+    -- tag = "*"
+    },
+
+
+    -- opts = function(_, opts)
+      -- add more things to the ensure_installed table protecting against community packs modifying it
+      -- opts.ensure_installed = require("astronvim.utils").list_insert_unique(opts.ensure_installed, {
+        -- "prettier",
+        -- "stylua",
+      -- })
+    -- end,
   {
     "jay-babu/mason-nvim-dap.nvim",
     -- overrides `require("mason-nvim-dap").setup(...)`

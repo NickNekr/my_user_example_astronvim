@@ -6,7 +6,12 @@
 return {
   -- first key is the mode
   n = {
+      ["<leader>a["] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", desc = "Prev error" },
+      ["<leader>a]"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", desc = "Next error" },
+      ["<leader>ao"] = { "<cmd>lua vim.diagnostic.open_float()<cr>", desc = "Open desc" },
+      ['<leader>a'] = {name = 'Error'},
     -- second key is the lefthand side of the map
+      ["<leader>'''"] = { "<cmd>Neogen<cr>", desc = "DockString" },
 
     -- navigate buffer tabs with `H` and `L`
     -- L = {
@@ -31,7 +36,6 @@ return {
     -- this is useful for naming menus
     ["<leader>b"] = { name = "Buffers" },
     -- quick save
-    -- ["<C-s>"] = { ":w!<cr>", desc = "Save File" },  -- change description but the same command
   },
   t = {
     -- setting a mapping to false will disable it
