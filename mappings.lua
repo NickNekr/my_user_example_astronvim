@@ -10,6 +10,12 @@ return {
       ["<leader>a]"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", desc = "Next error" },
       ["<leader>ao"] = { "<cmd>lua vim.diagnostic.open_float()<cr>", desc = "Open desc" },
       ['<leader>a'] = {name = 'Error'},
+
+-- Переключение на следующий буфер
+      vim.api.nvim_set_keymap('n', '<C-]>', ':bnext<CR>', { noremap = true, silent = true }),
+
+-- Переключение на предыдущий буфер
+      vim.api.nvim_set_keymap('n', '<C-[>', ':bprevious<CR>', { noremap = true, silent = true }),
     -- second key is the lefthand side of the map
       ["<leader>'''"] = { "<cmd>Neogen<cr>", desc = "DockString" },
 

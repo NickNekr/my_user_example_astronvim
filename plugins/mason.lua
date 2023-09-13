@@ -43,6 +43,12 @@ return {
     -- tag = "*"
     },
 
+    {
+    'iamcco/markdown-preview.nvim',
+    event = 'VeryLazy',
+    },
+
+
 
     -- opts = function(_, opts)
       -- add more things to the ensure_installed table protecting against community packs modifying it
